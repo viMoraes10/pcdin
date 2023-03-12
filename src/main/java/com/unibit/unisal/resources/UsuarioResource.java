@@ -27,6 +27,15 @@ public class UsuarioResource {
         return ResponseEntity.ok().body(usuario);
     }
 
+    @PutMapping(path = "/{idUsuario}")
+    public ResponseEntity<Usuario> update(@RequestParam Integer idUsuario,
+                                          @RequestBody Usuario usuario){
+
+        Usuario u = usuarioService.update(idUsuario, usuario);
+
+        return ResponseEntity.ok().body(u);
+    }
+
 
     @GetMapping
     public ResponseEntity<List<Usuario>> getAll (){
