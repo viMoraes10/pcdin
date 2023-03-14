@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet id="2" author="Vinicius Moraes">
+        <createTable tableName="usuario">
+            <column name="id" autoIncrement="true" type="bigint">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+
+            <column name="ativo" type="boolean" defaultValue="true"/>
+            <column name="nome" type="varchar(255)"/>
+            <column name="sobrenome" type="varchar(255)"/>
+            <column name="data_nascimento" type="date"/>
+            <column name="cpf" type="char(11)"/>
+            <column name="rg" type="char(8)"/>
+            <column name="email" type="varchar(100)"/>
+            <column name="cep" type="varchar(10)"/>
+            <column name="endereco" type="VARCHAR(150)"/>
+            <column name="bairro" type="VARCHAR(50)"/>
+            <column name="cidade" type="VARCHAR(50)"/>
+            <column name="uf" type="CHAR(2)"/>
+            <column name="pais" type="VARCHAR(50)"/>
+            <column name="celular" type="char(14)"/>
+            <column name="descricao" type="text"/>
+
+
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

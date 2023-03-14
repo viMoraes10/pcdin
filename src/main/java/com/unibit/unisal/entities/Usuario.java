@@ -35,10 +35,18 @@ public class Usuario implements Serializable {
 
     private String cidade;
 
+    private String uf;
+
+    private String bairro;
+
+    private String descricao;
+
+    private Integer celular;
+
     public Usuario() {
     }
 
-    public Usuario(Long id, Boolean ativo, String nome, String sobrenome, Date dataNascimento, Integer cpf, Integer rg, String email, Integer cep, String endereco, String pais, String cidade) {
+    public Usuario(Long id, Boolean ativo, String nome, String sobrenome, Date dataNascimento, Integer cpf, Integer rg, String email, Integer cep, String endereco, String pais, String cidade, String uf, String bairro, String descricao, Integer celular) {
         this.id = id;
         this.ativo = ativo;
         this.nome = nome;
@@ -51,6 +59,10 @@ public class Usuario implements Serializable {
         this.endereco = endereco;
         this.pais = pais;
         this.cidade = cidade;
+        this.uf = uf;
+        this.bairro = bairro;
+        this.descricao = descricao;
+        this.celular = celular;
     }
 
     public Long getId() {
@@ -147,5 +159,37 @@ public class Usuario implements Serializable {
 
     public void setCidade(String cidade) {
         this.cidade = cidade;
+    }
+
+    public String getUf() {
+        return uf;
+    }
+
+    public void setUf(String uf) {
+        this.uf = uf;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public Integer getCelular() {
+        return celular;
+    }
+
+    public void setCelular(Integer celular) {
+        this.celular = celular;
     }
 }
