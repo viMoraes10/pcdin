@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet id="3" author="Vinicius Moraes">
+        <createTable tableName="experiencia">
+            <column name="id" autoIncrement="true" type="bigint">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="ativo" type="boolean" defaultValue="true"/>
+            <column name="nome" type="varchar(255)"/>
+            <column name="tipo_emprego" type="char"/>
+            <column name="descricao" type="text"/>
+            <column name="id_usuario" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_usuario" references="usuario(id)"/>
+            </column>
+            <column name="ultima_modificacao" type="date"/>
+            <column name="quem_modificou" type="varchar(100)"/>
+            <column name="data_criacao" type="date"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

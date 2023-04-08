@@ -4,6 +4,7 @@ import com.unibit.unisal.entities.Usuario;
 import com.unibit.unisal.repositories.UsuarioRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -17,8 +18,6 @@ public class UsuarioService {
 
 
     public Usuario insert (Usuario usuarioNew){
-
-
 
         return usuarioRepository.save(usuarioNew);
     }
@@ -41,5 +40,20 @@ public class UsuarioService {
 
 
         return from;
+    }
+
+    public Usuario getId(Integer idUsuario) {
+
+        Usuario usuario = new Usuario();
+
+        Optional<Usuario> u =  usuarioRepository.findById(idUsuario.longValue());
+
+        usuario = u.get();
+        return usuario;
+    }
+
+    public List<Usuario> getAll() {
+
+        return usuarioRepository.getAll();
     }
 }

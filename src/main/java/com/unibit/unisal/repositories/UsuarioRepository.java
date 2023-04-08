@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario,Long> {
 
@@ -13,6 +15,10 @@ public interface UsuarioRepository extends JpaRepository<Usuario,Long> {
                 "from usuario u   " +
                 "where u.id = :id " )
      Usuario findUsuarioById(int id);
+
+
+     @Query("SELECT u FROM Usuario u")
+     List<Usuario> getAll();
 
 
 }

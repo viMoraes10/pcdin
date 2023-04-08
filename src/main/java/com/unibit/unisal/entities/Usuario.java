@@ -14,9 +14,9 @@ public class Usuario implements Serializable {
     private Long id;
 
     private Boolean ativo;
-
+    @Column(nullable = false)
     private String nome;
-
+    @Column(nullable = false)
     private String Sobrenome;
 
     private Date dataNascimento;

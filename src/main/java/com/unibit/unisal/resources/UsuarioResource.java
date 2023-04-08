@@ -27,20 +27,27 @@ public class UsuarioResource {
         return ResponseEntity.ok().body(usuario);
     }
 
-    @PutMapping(path = "/{idUsuario}")
-    public ResponseEntity<Usuario> update(@RequestParam Integer idUsuario,
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<Usuario> update(@PathVariable Integer id,
                                           @RequestBody Usuario usuario){
 
-        Usuario u = usuarioService.update(idUsuario, usuario);
+        Usuario u = usuarioService.update(id, usuario);
 
         return ResponseEntity.ok().body(u);
     }
 
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<Usuario> getId(@PathVariable Integer id){
+
+        Usuario u = usuarioService.getId(id);
+
+        return ResponseEntity.ok().body(u);
+    }
 
     @GetMapping
-    public ResponseEntity<List<Usuario>> getAll (){
+    public ResponseEntity<List<Usuario>> getAll(){
 
-        List<Usuario> usuarioList = new ArrayList<>();
+        List<Usuario> usuarioList = usuarioService.getAll();
 
         return  ResponseEntity.ok().body(usuarioList);
     }
