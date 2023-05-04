@@ -37,20 +37,22 @@ public class UsuarioResource {
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Usuario> getId(@PathVariable Integer id){
+    public ResponseEntity<?> getId(@PathVariable Integer id){
 
         Usuario u = usuarioService.getId(id);
+        if (u == null){
+            return ResponseEntity.notFound().build();
+        }
 
         return ResponseEntity.ok().body(u);
     }
 
     @GetMapping
-    public ResponseEntity<List<Usuario>> getAll(){
+    public ResponseEntity<?> getAll(){
 
         List<Usuario> usuarioList = usuarioService.getAll();
 
         return  ResponseEntity.ok().body(usuarioList);
     }
-
 
 }

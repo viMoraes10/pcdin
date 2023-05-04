@@ -38,17 +38,13 @@ public class UsuarioService {
         from.setPais(to.getPais());
         from.setCidade(to.getCidade());
 
-
         return from;
     }
 
     public Usuario getId(Integer idUsuario) {
 
-        Usuario usuario = new Usuario();
+        Usuario usuario = usuarioRepository.findById(idUsuario.longValue()).get();
 
-        Optional<Usuario> u =  usuarioRepository.findById(idUsuario.longValue());
-
-        usuario = u.get();
         return usuario;
     }
 
