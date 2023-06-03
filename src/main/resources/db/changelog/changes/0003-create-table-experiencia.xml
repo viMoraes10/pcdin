@@ -20,6 +20,10 @@
             <column name="ultima_modificacao" type="date"/>
             <column name="quem_modificou" type="varchar(100)"/>
             <column name="data_criacao" type="date"/>
+            
+            <column name="data_final" type="date"/>
+            <column name="data_inicial" type="date"/>
+
         </createTable>
     </changeSet>
 </databaseChangeLog>

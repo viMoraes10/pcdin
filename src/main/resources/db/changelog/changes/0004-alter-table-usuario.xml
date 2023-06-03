@@ -5,9 +5,10 @@
         xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
     http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
-    <include file="db/changelog/changes/0001-create-orders-table.xml" />
-    <include file="db/changelog/changes/0002-create-table-usuario.xml" />
-<!--    <include file="db/changelog/changes/0003-create-table-experiencia.xml" />-->
-    <include file="db/changelog/changes/0004-alter-table-usuario.xml" />
-
+    <changeSet id="1" author="Vinicius Moraes">
+        <addColumn tableName="usuario">
+            <column name="senha" type="varchar(255)"></column>
+            <column name="login" type="varchar(255)"></column>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>
